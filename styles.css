@@ -102,30 +102,36 @@
       color: #333;
       margin-bottom: 10px;
     }
-
     .box-grid {
       display: flex;
-      flex-wrap: wrap; /* Para quebrar linha quando não couber */
-      gap: 10px; /* Espaçamento entre os botões */
+      flex-wrap: wrap;
+      gap: 10px;
     }
     
     .box {
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      padding: 10px 15px;
-      background-color: #4CAF50; /* verde */
+      width: 100px;       /* largura fixa */
+      height: 100px;      /* altura fixa para ficar quadrado */
+      background-color: #4CAF50;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
-      flex: 1 1 150px; /* largura base de 150px, pode encolher se precisar */
-      max-width: 200px; /* limite máximo */
-      white-space: nowrap; /* evita quebra do texto */
+      border-radius: 8px; /* cantos arredondados, pode ajustar */
+      white-space: normal; /* permite quebrar texto para caber dentro do quadrado */
+      padding: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      text-align: center;
       transition: background-color 0.3s ease;
+      font-size: 14px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* sombra padrão leve */
+      transition: box-shadow 0.3s ease, transform 0.3s ease; /* animação suave */
     }
     
     .box:hover {
       background-color: #45a049;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3); /* sombra mais forte */
+      transform: translateY(-4px); /* levanta o botão levemente */
+      background-color: #45a049; /* muda a cor para um verde mais escuro */
     }
     
