@@ -36,8 +36,32 @@
             // Alterar a imagem exibida com a imagem sorteada
             document.getElementById("sorteio-imagem").src = imagens[indiceAleatorio];
         }
+        
     </script>
+<script>
+  const xpTexto = document.getElementById("xp");
+  const barra = document.getElementById("barra");
+  const nivelTexto = document.getElementById("nivel");
+  const aumentarBtn = document.getElementById("aumentar");
 
+  let progresso = 0;
+  let nivel = 1;
+
+  aumentarBtn.addEventListener("click", () => {
+    if (progresso < 100) {
+      progresso += 10;
+      barra.style.width = progresso + "%";
+      xpTexto.textContent = progresso + "%";
+    } else {
+      progresso = 0;
+      nivel++;
+      barra.style.width = "0%";
+      xpTexto.textContent = "0%";
+      nivelTexto.textContent = nivel;
+      alert("🎉 Parabéns! Você subiu para o nível " + nivel + "!");
+    }
+  });
+</script>
     <div class="user-info">
       <div class="pet-info">
     
