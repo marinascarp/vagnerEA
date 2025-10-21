@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Desconecta & Cresce</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>DESCONECTA & CRESCE</h1>
+      <p>Um dia por semana sem celular, mais conexão com você mesmo. Seu pet vai crescer junto com você!</p>
+    </header>
+
+    <button class="start-button">Começar Jornada</button>
+    <button onclick="sortearImagem()">Sortear Imagem</button>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <div id="image-display">
+        <img id="sorteio-imagem" src="pet/cobra.jpeg.jpeg"  Imagem sorteada />
+    </div>
+
+    <script>
+        const imagens = [
+            "cabra.jpeg.jpeg",
+            "dino.jpeg",
+            "dragao.jpeg.jpeg",
+            "pinguin.jpeg.jpeg"
+        ];
+
+        function sortearImagem() {
+            // Gerar um número aleatório entre 0 e o tamanho do array de imagens
+            const indiceAleatorio = Math.floor(Math.random() * imagens.length);
+            // Alterar a imagem exibida com a imagem sorteada
+            document.getElementById("sorteio-imagem").src = imagens[indiceAleatorio];
+        }
+    </script>
+
+    <div class="user-info">
+      <div class="pet-info">
+    
+        <div>
+          <h3>Nome do Usuário</h3>
+          <p>Próximo Dia Desconectado</p>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <span>0%</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Atividades Offline</h2>
+      <div class="box-grid">
+        <a class="box" href="ler.html">Ler um livro</a>
+        <a class="box" href="caminhada.html">Fazer uma caminhada</a>
+        <a class="box" href="cozinhar.html">Cozinhar algo novo</a>
+      </div>
+    </div>
+    
+    <div class="section">
+      <h2>Recompensas</h2>
+      <div class="box-grid">
+        <a class="box" href="primeiro.html">Primeiro dia</a>
+        <a class="box" href="leitor.html">Leitor da semana</a>
+        <a class="box" href="chef.html">Chef offline</a>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+</body>
+</html>
