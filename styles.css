@@ -102,52 +102,35 @@
       color: #333;
       margin-bottom: 10px;
     }
-
-    /* === CAIXAS / BOTÕES === */
     .box-grid {
       display: flex;
-      justify-content: center;
+      flex-wrap: wrap;
       gap: 10px;
-      flex-wrap: nowrap; /* mantém lado a lado */
     }
-
+    
     .box {
-      display: inline-block;
-      padding: 12px 20px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;       /* largura fixa */
+      height: 100px;      /* altura fixa para ficar quadrado */
       background-color: #4CAF50;
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 8px; /* cantos arredondados, pode ajustar */
+      white-space: normal; /* permite quebrar texto para caber dentro do quadrado */
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
       text-align: center;
-      cursor: pointer;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s ease;
+      font-size: 14px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* sombra padrão leve */
+      transition: box-shadow 0.3s ease, transform 0.3s ease; /* animação suave */
     }
-
+    
     .box:hover {
       background-color: #45a049;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3); /* sombra mais forte */
+      transform: translateY(-4px); /* levanta o botão levemente */
+      background-color: #45a049; /* muda a cor para um verde mais escuro */
     }
-
-    /* IMAGEM DE EXEMPLO */
-    #image-display {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    img {
-      max-width: 300px;
-      border-radius: 10px;
-    }
-    /* ==== NÍVEL ==== */
-.nivel {
-  background-color: #2e7d32;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  font-weight: bold;
-  color: white;
-  margin: 10px auto;
-}
