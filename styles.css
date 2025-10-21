@@ -103,37 +103,29 @@
       margin-bottom: 10px;
     }
 
-    /* === CAIXAS / BOTÕES === */
     .box-grid {
       display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: nowrap; /* mantém lado a lado */
+      flex-wrap: wrap; /* Para quebrar linha quando não couber */
+      gap: 10px; /* Espaçamento entre os botões */
     }
-
+    
     .box {
-      display: inline-block;
-      padding: 12px 20px;
-      background-color: #4CAF50;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 15px;
+      background-color: #4CAF50; /* verde */
       color: white;
       text-decoration: none;
-      border-radius: 5px;
-      text-align: center;
-      cursor: pointer;
-      transition: background-color 0.3s;
+      border-radius: 6px;
+      flex: 1 1 150px; /* largura base de 150px, pode encolher se precisar */
+      max-width: 200px; /* limite máximo */
+      white-space: nowrap; /* evita quebra do texto */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      transition: background-color 0.3s ease;
     }
-
+    
     .box:hover {
       background-color: #45a049;
     }
-
-    /* IMAGEM DE EXEMPLO */
-    #image-display {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    img {
-      max-width: 300px;
-      border-radius: 10px;
-    }
+    
