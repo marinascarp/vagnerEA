@@ -1,136 +1,277 @@
+/* 🎨 RESET E BASE GERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* garante que padding e borda não aumentem o tamanho total */
+  font-family: "Poppins", Arial, sans-serif; /* define a fonte padrão */
+}
 
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+body {
+  background: linear-gradient(135deg, #29b653 0%, #c0f1d4 100%); /* fundo em degradê verde-claro */
+  display: flex; /* centraliza o conteúdo */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* ocupa toda a altura da tela */
+  color: #333; /* cor padrão do texto */
+}
+.container2{
+   background-color: #ececec; /* fundo branco */
+  width: 390px;
+  padding: 5px 11px;
+  border-radius: 20px; /* bordas arredondadas */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); /* sombra leve */
+  text-align: center;
+  transition: transform 0.3s ease; /* animação ao passar o mouse */
+}
+/* 📦 CONTAINER PRINCIPAL */
+.container {
+  background-color: #dfdbdb; /* fundo branco */
+  width: 390px;
+  padding: 10px 5px;
+  border-radius: 20px; /* bordas arredondadas */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); /* sombra leve */
+  text-align: center;
+  transition: transform 0.3s ease; /* animação ao passar o mouse */
+}
 
-    body {
-      background-color: #EAF8F1; /* fundo verde claro */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
+.container:hover {
+  transform: scale(1.01); /* aumenta levemente */
+}
 
-    .container {
-      background-color: #fff;
-      width: 360px;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+/* 🏷️ CABEÇALHO */
+.header {
+  margin-bottom: 25px;
+}
 
-    .header {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+.header h1 {
+  color: #20b873; /* verde principal */
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  text-transform: uppercase; /* deixa em maiúsculas */
+  letter-spacing: 1px; /* espaçamento entre letras */
+}
 
-    .header h1 {
-      color: #1DBF73;
-      font-size: 22px;
-    }
+.header p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
 
-    .header p {
-      font-size: 14px;
-      color: #555;
-    }
+/* ▶️ BOTÃO PRINCIPAL */
+.start-button {
+  display: inline-block;
+  background-color: #1DBF73;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px; /* arredondado estilo "pílula" */
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(29, 191, 115, 0.3); /* sombra verde suave */
+  transition: background 0.3s, transform 0.2s;
+}
 
-    .start-button {
-      display: block;
-      margin: 0 auto 20px auto;
-      background-color: #1DBF73;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 25px;
-      font-size: 16px;
-      cursor: pointer;
-    }
+.start-button:hover {
+  background-color: #18a464; /* escurece no hover */
+  transform: translateY(-2px); /* sobe um pouquinho */
+}
 
-    .start-button:hover {
-      background-color: #159d59;
-    }
+/* 🧍‍♀️ INFO DO USUÁRIO E PET */
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
-    .user-info {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
+.user-info {
+  text-align: left;
+}
 
-    .pet-info {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+.pet-info .pet-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
 
-    .pet-icon {
-      width: 40px;
-      height: 40px;
-      object-fit: cover;
-    }
+.week {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
 
-    .progress {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+.day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  margin: 0 3px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  font-weight: bold;
+}
+
+.xp-bar {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.xp-fill {
+  background: #4CAF50;
+  height: 100%;
+  width: 0%;
+  border-radius: 10px 0 0 10px;
+  transition: width 0.5s;
+}
+
+.xp-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 0;
+  line-height: 20px;
+  font-weight: bold;
+  color: #000;
+}
+
+
+/* 📊 BARRA DE PROGRESSO */
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  flex-grow: 1; /* ocupa o espaço restante */
+  height: 8px;
+  background-color: #4e8b4e; /* fundo cinza da barra */
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  width: 45%; /* porcentagem atual de progresso */
+  height: 100%;
+  background: linear-gradient(90deg, #1DBF73, #16d680); /* degradê verde */
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out; /* animação suave ao mudar */
+}
+
+/* 🧩 SEÇÕES (Atividades, Recompensas) */
+.section {
+  margin-top: 20px;
+}
+
+.section h2 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 12px;
+  text-align: left; /* alinha o título à esquerda */
+}
+
+/* 🔲 GRADE DE QUADRADOS */
+.box-grid {
+  display: flex; /* organiza os quadrados lado a lado */
+  flex-wrap: wrap; /* quebra linha quando necessário */
+  justify-content: center; /* centraliza no meio */
+  gap: 12px; /* espaço entre os quadrados */
+  margin-top: 10px;
+}
+
+/* 🟩 QUADRADOS INDIVIDUAIS */
+.box {
+  width: 90px;
+  height: 90px;
+  background-color: #1DBF73; /* verde padrão */
+  color: #fff;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  padding: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* leve sombra */
+  transition: all 0.3s ease; /* animação de hover */
+}
+
+/* 🧱 PRIMEIROS 2 LADO A LADO */
+.box-grid .box:nth-child(1),
+.box-grid .box:nth-child(2) {
+  flex: 1 1 calc(50% - 12px); /* ocupa metade da linha */
+  max-width: 100px;
+}
+
+/* 🎯 TERCEIRO CENTRALIZADO ABAIXO */
+.box-grid .box:nth-child(3) {
+  flex: 0 0 90px; /* mantém tamanho fixo */
+  margin-top: 5px; /* espaço acima */
+  align-self: center; /* centraliza na linha */
+}
+
+/* ✨ EFEITO AO PASSAR O MOUSE */
+.box:hover {
+  background-color: #18a464; /* escurece */
+  transform: translateY(-4px); /* sobe levemente */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* sombra mais forte */
+}
+
+/* 🔘 BOTÃO SECUNDÁRIO */
+.progress-container {
+      width: 100%;
+      background: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 10px;
     }
 
     .progress-bar {
-      flex-grow: 1;
-      height: 6px;
-      background-color: #ddd;
-      border-radius: 10px;
-      position: relative;
-    }
-
-    .progress-fill {
+      height: 20px;
+      background: #4CAF50;
       width: 0%;
-      height: 100%;
-      background-color: #1DBF73;
+      transition: width 0.5s ease;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      border: none;
       border-radius: 10px;
-    }
-
-    .section {
-      margin-bottom: 20px;
-    }
-
-    .section h2 {
-      font-size: 16px;
-      color: #333;
-      margin-bottom: 10px;
-    }
-    .box-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    
-    .box {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 100px;       /* largura fixa */
-      height: 100px;      /* altura fixa para ficar quadrado */
       background-color: #4CAF50;
       color: white;
-      text-decoration: none;
-      border-radius: 8px; /* cantos arredondados, pode ajustar */
-      white-space: normal; /* permite quebrar texto para caber dentro do quadrado */
-      padding: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-      text-align: center;
-      transition: background-color 0.3s ease;
-      font-size: 14px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* sombra padrão leve */
-      transition: box-shadow 0.3s ease, transform 0.3s ease; /* animação suave */
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
     }
-    
-    .box:hover {
+
+    button:hover {
       background-color: #45a049;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.3); /* sombra mais forte */
-      transform: translateY(-4px); /* levanta o botão levemente */
-      background-color: #45a049; /* muda a cor para um verde mais escuro */
+    }
+     img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+     .card {
+      background: #fff;
+      border: 2px solid #4CAF50;
+      border-radius: 12px;
+      padding: 20px;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
