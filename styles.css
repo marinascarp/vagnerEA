@@ -267,11 +267,54 @@ body {
       object-fit: contain;
       transition: transform 0.3s ease;
     }
-     .card {
-      background: #fff;
-      border: 2px solid #4CAF50;
-      border-radius: 12px;
-      padding: 20px;
-      display: inline-block;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
+    .card {
+  background: #fff;
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  gap: 10px;
+}
+
+/* 🎲 BOTÃO SORTAR PET */
+.sortear-btn {
+  background-color: #1DBF73;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  align-self: center;
+  margin-bottom: 5px;
+}
+
+.sortear-btn:hover {
+  background-color: #18a464;
+}
+
+/* 🐾 IMAGEM DO PET (MENOR) */
+.pet-imagem {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  margin-bottom: 5px;
+}
+
+.pet-imagem:hover {
+  transform: scale(1.05);
+}
+
+/* 🧩 TEXTO */
+h3 {
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
