@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Desconecta & Cresce</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <div class="container">
     <header class="header">
@@ -13,20 +15,36 @@
       <p>Um dia por semana sem celular, mais conexão com você mesmo. Seu pet vai crescer junto com você!</p>
     </header>
 
-    <button onclick="sortearPet()">🎲 Sortear Pet</button>
-
     <div class="card">
-      <img id="petImagem"  alt="Pet pequeno">
+      <!-- Usuário -->
+      <div class="user-info">
+        <div class="perfil">
+          <img id="fotoPerfil" src="avatar-default.png" alt="Foto de perfil">
+          <input type="file" id="inputFoto" accept="image/*">
+        </div>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+      </div>
+
+      <!-- Botão de sortear -->
+      <button class="sortear-btn" onclick="sortearPet()">🎲 Sortear Pet</button>
+
+      <!-- Imagem e nome do pet -->
+      <img id="petImagem" class="pet-imagem" alt="Pet pequeno">
       <h2 id="petNome">Nenhum pet ainda</h2>
 
+      <!-- Barra de XP -->
       <div class="progress-container">
         <div class="progress-bar" id="xpBar"></div>
       </div>
       <p id="xpTexto">XP: 0%</p>
 
+      <!-- Botão de XP -->
       <button onclick="ganharXP()">💪 Ganhar XP</button>
     </div>
 
+    <!-- Atividades -->
     <div class="section">
       <h2>Atividades Offline</h2>
       <div class="box-grid">
@@ -36,6 +54,7 @@
       </div>
     </div>
 
+    <!-- Recompensas -->
     <div class="section">
       <h2>Recompensas</h2>
       <div class="box-grid">
@@ -46,101 +65,83 @@
     </div>
   </div>
 
+  <!-- Scripts -->
   <script>
-  const pets = [
-    {
-      nome: "Cobrinha",
-      pequeno: "pet/cobra.jpg",
-      medio: "pet/cobramedia.jpg",
-      grande: "pet/cobraadulta.jpg"
-    },
-    {
-      nome: "Dino",
-      pequeno: "pet/dino.jpg",
-      medio: "pet/dinomedio.jpg",
-      grande: "pet/dinoadulto.jpg"
-    },
-    {
-      nome: "Dragão",
-      pequeno: "pet/dragao.jpeg.jpg",
-      medio: "pet/dragaomedio.jpg",
-      grande: "pet/dragaoadulto.jpg"
-    },
-    {
-      nome: "Pinguim",
-      pequeno: "pet/pinguin.jpeg.jpg",
-      medio: "pet/pinguinmedia.jpg",
-      grande: "pet/pinguinadulto.jpg"
-    }
-  ];
+    const inputFoto = document.getElementById('inputFoto');
+    const fotoPerfil = document.getElementById('fotoPerfil');
+    inputFoto.addEventListener('change', function () {
+      const arquivo = this.files[0];
+      if (arquivo) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          fotoPerfil.src = e.target.result;
+        };
+        reader.readAsDataURL(arquivo);
+      }
+    });
 
- let petAtual = null;
-  let xp = 0;
-  let fase = "pequeno"; // fases: pequeno → medio → grande
+    const pets = [
+      { nome: "Cobrinha", pequeno: "pet/cobra.jpg", medio: "pet/cobramedia.jpg", grande: "pet/cobraadulta.jpg" },
+      { nome: "Dino", pequeno: "pet/dino.jpg", medio: "pet/dinomedio.jpg", grande: "pet/dinoadulto.jpg" },
+      { nome: "Dragão", pequeno: "pet/dragao.jpeg.jpg", medio: "pet/dragaomedio.jpg", grande: "pet/dragaoadulto.jpg" },
+      { nome: "Pinguim", pequeno: "pet/pinguin.jpeg.jpg", medio: "pet/pinguinmedia.jpg", grande: "pet/pinguinadulto.jpg" }
+    ];
 
-  function sortearPet() {
-    const sorteado = pets[Math.floor(Math.random() * pets.length)];
-    petAtual = sorteado;
-    xp = 0;
-    fase = "pequeno";
+    let petAtual = null;
+    let xp = 0;
+    let fase = "pequeno";
 
-    const petImg = document.getElementById("petImagem");
-    petImg.src = petAtual.pequeno;
-    petImg.style.transform = "scale(1)";
-    document.getElementById("petNome").innerText = petAtual.nome;
-    atualizarXP();
-  }
+    function sortearPet() {
+      const sorteado = pets[Math.floor(Math.random() * pets.length)];
+      petAtual = sorteado;
+      xp = 0;
+      fase = "pequeno";
 
-  function ganharXP() {
-    if (!petAtual) {
-      alert("Você precisa sortear um pet primeiro!");
-      return;
+      const petImg = document.getElementById("petImagem");
+      petImg.src = petAtual.pequeno;
+      document.getElementById("petNome").innerText = petAtual.nome;
+      atualizarXP();
     }
 
-   // Calcula incremento aleatório entre 10 e 20
-  let ganho = Math.floor(Math.random() * 10) + 10; // 10 a 20
+    function ganharXP() {
+      if (!petAtual) {
+        alert("Você precisa sortear um pet primeiro!");
+        return;
+      }
 
-  // Ajusta para não ultrapassar 100
-  if (xp + ganho > 100) {
-    ganho = 100 - xp; // sobe exatamente até 100
-  }
+      let ganho = Math.floor(Math.random() * 10) + 10;
+      if (xp + ganho > 100) ganho = 100 - xp;
 
-  xp += ganho;
+      xp += ganho;
+      atualizarXP();
 
-  atualizarXP();
-
-  // Evolui SOMENTE se chegou a 100%
-  if (xp === 100) {
-    evoluirPet();
-  }
-}
-
-  function atualizarXP() {
-    document.getElementById("xpBar").style.width = xp + "%";
-    document.getElementById("xpTexto").innerText = `XP: ${xp}%`;
-  }
-
-  function evoluirPet() {
-    const petImg = document.getElementById("petImagem");
-
-    if (fase === "pequeno") {
-      fase = "medio";
-      petImg.src = petAtual.medio;
-      petImg.style.transform = "scale(1.2)";
-      alert(`${petAtual.nome} cresceu e ficou MÉDIO! 🐾`);
-    } else if (fase === "medio") {
-      fase = "grande";
-      petImg.src = petAtual.grande;
-      petImg.style.transform = "scale(1.4)";
-      alert(`${petAtual.nome} evoluiu e ficou ADULTO! 🎉`);
-    } else if (fase === "grande") {
-      alert(`${petAtual.nome} já está no nível máximo! 🌟`);
+      if (xp === 100) evoluirPet();
     }
 
-    // Reseta XP para o próximo ciclo
-    xp = 0;
-    atualizarXP();
-  }
-</script>
+    function atualizarXP() {
+      document.getElementById("xpBar").style.width = xp + "%";
+      document.getElementById("xpTexto").innerText = `XP: ${xp}%`;
+    }
+
+    function evoluirPet() {
+      const petImg = document.getElementById("petImagem");
+
+      if (fase === "pequeno") {
+        fase = "medio";
+        petImg.src = petAtual.medio;
+        alert(`${petAtual.nome} cresceu e ficou MÉDIO! 🐾`);
+      } else if (fase === "medio") {
+        fase = "grande";
+        petImg.src = petAtual.grande;
+        alert(`${petAtual.nome} evoluiu e ficou ADULTO! 🎉`);
+      } else {
+        alert(`${petAtual.nome} já está no nível máximo! 🌟`);
+      }
+
+      xp = 0;
+      atualizarXP();
+    }
+  </script>
 </body>
+
 </html>
