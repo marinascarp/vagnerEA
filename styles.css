@@ -50,6 +50,10 @@
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin-bottom: 40px;
+      display: flex;
+  flex-direction: column;
+ 
+  
     }
 
     .card:hover {
@@ -98,16 +102,20 @@
     /* 🔹 BOTÕES */
     .sortear-btn,
     button {
-      background-color: #22b574;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      transition: background 0.3s;
-      margin-top: 5px;
+     background-color: #22b574;
+  color: #fff;
+  border: none;
+  border-radius: 8px; /* cantos arredondados */
+  font-weight: 600;
+  font-size: 17px; /* tamanho da fonte menor */
+  cursor: pointer;
+  transition: background 0.3s;
+ margin: 5px auto;
+  /* diminui a largura */
+  padding: 10px 16px; /* reduz o espaçamento interno */
+  width: 200px; /* define largura fixa, ajuste conforme necessário */
+  text-align: center;
+  
     }
 
     .sortear-btn:hover,
@@ -117,10 +125,14 @@
 
     /* 🔹 PET */
     .pet-imagem {
-      width: 100px;
-      height: 100px;
-      object-fit: contain;
-      margin: 15px 0 10px;
+         display: block;
+    margin: 20px auto; /* centraliza horizontalmente */
+    width:150px; /* ajuste do tamanho da imagem */
+    height: 150px;
+    object-fit: contain;
+    border: 3px solid #22b574; /* espessura 3px, cor verde */
+  border-radius: 8px; 
+  padding: 4px; 
     }
 
     #petNome {
