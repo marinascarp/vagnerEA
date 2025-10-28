@@ -1,11 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Livros legais e mais vendidos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 40px;
+      font-size: 2em;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      justify-items: center;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 6px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      width: 250px;
+      text-align: left;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card h3 {
+      font-size: 1.05em;
+      margin-bottom: 8px;
+      color: #000;
+    }
+
+    .card p {
+      font-size: 0.9em;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    .card button {
+      background-color: #004aad;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+
+    .card button:hover {
+      background-color: #0060e0;
+    }
+  </style>
 </head>
 <body>
-    <a href="index.html">← Voltar para a página inicial</a>
+
+  <div class="container">
+    <h1>Livros legais e mais vendidos</h1>
+
+    <div class="card-grid">
+      <!-- Primeira linha -->
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/81iqZ2HHD-L.jpg" alt="Harry Potter e a Pedra Filosofal">
+        <div class="card-content">
+          <h3>Harry Potter e a Pedra Filosofal</h3>
+          <p>J.K. Rowling — A magia começa com o primeiro livro da saga mundialmente famosa.</p>
+          <button>Ver mais</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71aFt4+OTOL.jpg" alt="O Pequeno Príncipe">
+        <div class="card-content">
+          <h3>O Pequeno Príncipe</h3>
+          <p>Antoine de Saint-Exupéry — Uma fábula sobre amor, amizade e o essencial invisível aos olhos.</p>
+          <button>Ver mais</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71kxa1-0mfL.jpg" alt="A Menina que Roubava Livros">
+        <div class="card-content">
+          <h3>A Menina que Roubava Livros</h3>
+          <p>Markus Zusak — Uma história emocionante narrada pela própria Morte.</p>
+          <button>Ver mais</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/81Y5WuARqpL.jpg" alt="1984">
+        <div class="card-content">
+          <h3>1984</h3>
+          <p>George Orwell — Um clássico distópico sobre vigilância e liberdade.</p>
+          <button>Ver mais</button>
+        </div>
+      </div>
+
+      <!-- Segunda linha -->
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/81EVdWdmOKL.jpg" alt="Dom Casmurro">
+        <div class="card-content">
+          <h3>Dom Casmurro</h3>
+          <p>Machado de Assis — Um dos maiores romances brasileiros, cheio de ironia e mistério.</p>
+          <button>Ver mais</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/81gepf1eMqL.jpg" alt="A Culpa é das Estrelas">
+        <div class="card-content">
+          <h3>A Culpa é das Estrelas</h3>
+          <p>John Green — Uma história de amor intensa e inesquecível entre dois jovens.</p>
+          <button>Ver mais</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71Q1Iu4suSL.jpg" alt="O Hobbit">
+        <div class="card-content">
+          <h3>O Hobbit</h3>
+          <p>J.R.R. Tolkien — A incrível jornada de Bilbo Bolseiro pela Terra-média.</p>
+          <button>Ver mais</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://m.media-amazon.com/images/I/91bYsX41DVL.jpg" alt="O Poder do Hábito">
+        <div class="card-content">
+          <h3>O Poder do Hábito</h3>
+          <p>Charles Duhigg — Descubra como os hábitos moldam sua vida e como mudá-los.</p>
+          <button>Ver mais</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
