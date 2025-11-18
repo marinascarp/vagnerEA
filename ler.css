@@ -1,87 +1,91 @@
 body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      margin: 0;
-      padding: 0;
-    }
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
 
-    h1 {
-      text-align: center;
-      color: #222;
-      margin-bottom: 40px;
-      font-size: 2em;
-    }
+h1 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 40px;
+  font-size: 2em;
+}
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      justify-items: center;
-    }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
 
-    .card {
-      background-color: #fff;
-      border-radius: 6px;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-      overflow: hidden;
-      width: 250px;
-      text-align: left;
-      transition: transform 0.2s ease;
-    }
+.card {
+  /* Cor de fundo alterada para branco (claro) */
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  width: 250px;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
 
-    .card:hover {
-      transform: translateY(-6px);
-    }
+.card:hover {
+  transform: translateY(-6px);
+}
 
-    .card img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-    }
+.card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
 
-    .card-content {
-      padding: 15px;
-    }
+.card-content {
+  padding: 15px;
+}
 
-    .card h3 {
-      font-size: 1.05em;
-      margin-bottom: 8px;
-      color: #000;
-    }
+.card h3 {
+  font-size: 1.05em;
+  margin-bottom: 8px;
+  color: #000; /* Cor alterada para preto para contraste */
+}
 
-    .card p {
-      font-size: 0.9em;
-      color: #444;
-      margin-bottom: 15px;
-    }
+.card p {
+  font-size: 0.9em;
+  color: #444; /* Cor alterada para cinza escuro para contraste */
+  margin-bottom: 15px;
+}
 
-    .card button {
-      background-color: #ffffff;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.9em;
-    }
+.card button {
+  /* Cor de fundo alterada para roxo bonito */
+  background-color: #8e44ad;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
 
-    .card button:hover {
-      background-color: #0060e0;
-    }
+.card button:hover {
+  /* Cor de hover alterada para tom mais escuro de roxo */
+  background-color: #6c3483;
+}
 
-    /* 🔹 Barra fixa no topo */
+/* 🔹 Barra fixa no topo */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background :linear-gradient(135deg, #8fd3f4, #84fab0);
+  /* Fundo Degradê alterado para roxo mais bonito */
+  background: linear-gradient(135deg, #a78bfa, #8e44ad);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
@@ -97,13 +101,14 @@ body {
   align-items: center;
   gap: 40px;                    /* Espaço entre os links */
   padding: 20px 20px;
-  background: linear-gradient(90deg, #87CEFA, #98FB98);
+  /* Fundo Degradê alterado para roxo mais bonito */
+  background: linear-gradient(90deg, #a78bfa, #8e44ad);
 }
 
 /* Estilo dos links */
 .navbar a {
   text-decoration: none;
-  color: #333;
+  color: #fff; /* Cor alterada para branco para contraste */
   font-size: 18px;
   font-weight: 500;
   display: flex;
@@ -112,7 +117,7 @@ body {
 }
 
 .navbar a:hover {
-  color: #000;
+  color: #f0f0f0; /* Cor de hover alterada para branco claro */
 }
 
 /* Segurança para não ficar atrás do topo */

@@ -1,203 +1,212 @@
- /* 🔹 RESET E BASE */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
+/* 🔹 RESET E BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
-    body {
-      background: linear-gradient(135deg, #8fd3f4, #84fab0);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 40px 10px;
-    }
+body {
+  /* Fundo Degradê alterado para azul/roxo */
+  background: linear-gradient(135deg, #8fd3f4, #a78bfa);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 10px;
+}
 
-    .container {
-      width: 100%;
-      max-width: 900px;
-    }
+.container {
+  width: 100%;
+  max-width: 900px;
+}
 
-    /* 🔹 CABEÇALHO */
-    .header {
-      text-align: center;
-      margin-bottom: 30px;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    }
+/* 🔹 CABEÇALHO */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
 
-    .header h1 {
-      color: #22b574;
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
+.header h1 {
+  /* Cor alterada para roxo */
+  color: #9b59b6; 
+  font-size: 28px;
+  margin-bottom: 10px;
+}
 
-    .header p {
-      color: #333;
-      font-size: 15px;
-    }
+.header p {
+  color: #333;
+  font-size: 15px;
+}
 
-    /* 🔹 CARD DO PERFIL */
-    .card {
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      padding: 30px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      margin-bottom: 40px;
-      display: flex;
+/* 🔹 CARD DO PERFIL */
+.card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 40px;
+  display: flex;
   flex-direction: column;
- 
-  
-    }
+}
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-    }
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
 
-    /* 🔹 PERFIL */
-    .perfil img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 3px solid #22b574;
-      box-shadow: 0 0 8px rgba(34, 181, 116, 0.3);
-      margin-bottom: 10px;
-    }
+/* 🔹 PERFIL */
+.perfil img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  /* Borda alterada para roxo */
+  border: 3px solid #9b59b6; 
+  /* Sombra alterada para roxo */
+  box-shadow: 0 0 8px rgba(155, 89, 182, 0.5); 
+  margin-bottom: 10px;
+}
 
-    #inputFoto {
-      display: block;
-      margin: 10px auto 20px;
-      cursor: pointer;
-    }
+#inputFoto {
+  display: block;
+  margin: 10px auto 20px;
+  cursor: pointer;
+}
 
-    label[for="nome"] {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 5px;
-      text-align: left;
-    }
+label[for="nome"] {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-align: left;
+}
 
-    input[type="text"] {
-      width: 100%;
-      padding: 10px;
-      border-radius: 10px;
-      border: 1.5px solid #ccc;
-      font-size: 14px;
-      transition: border-color 0.3s, box-shadow 0.3s;
-      margin-bottom: 20px;
-    }
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1.5px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  margin-bottom: 20px;
+}
 
-    input[type="text"]:focus {
-      border-color: #22b574;
-      box-shadow: 0 0 5px rgba(34, 181, 116, 0.3);
-    }
+input[type="text"]:focus {
+  /* Foco alterado para roxo */
+  border-color: #9b59b6; 
+  /* Sombra de foco alterada para roxo */
+  box-shadow: 0 0 5px rgba(155, 89, 182, 0.5); 
+}
 
-    /* 🔹 BOTÕES */
-    .sortear-btn,
-    button {
-     background-color: #22b574;
+/* 🔹 BOTÕES */
+.sortear-btn,
+button {
+  /* Cor de fundo alterada para roxo */
+  background-color: #9b59b6; 
   color: #fff;
   border: none;
-  border-radius: 8px; /* cantos arredondados */
+  border-radius: 8px;
   font-weight: 600;
-  font-size: 17px; /* tamanho da fonte menor */
+  font-size: 17px;
   cursor: pointer;
   transition: background 0.3s;
- margin: 5px auto;
-  /* diminui a largura */
-  padding: 10px 16px; /* reduz o espaçamento interno */
-  width: 200px; /* define largura fixa, ajuste conforme necessário */
+  margin: 5px auto;
+  padding: 10px 16px;
+  width: 200px;
   text-align: center;
-  
-    }
+}
 
-    .sortear-btn:hover,
-    button:hover {
-      background-color: #1a945d;
-    }
+.sortear-btn:hover,
+button:hover {
+  /* Cor de hover alterada para um tom mais escuro de roxo */
+  background-color: #7d3c98; 
+}
 
-    /* 🔹 PET */
-    .pet-imagem {
-         display: block;
-    margin: 20px auto; /* centraliza horizontalmente */
-    width:150px; /* ajuste do tamanho da imagem */
-    height: 150px;
-    object-fit: contain;
-    border: 3px solid #22b574; /* espessura 3px, cor verde */
-  border-radius: 8px; 
-  padding: 4px; 
-    }
+/* 🔹 PET */
+.pet-imagem {
+  display: block;
+  margin: 20px auto;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  /* Borda alterada para roxo */
+  border: 3px solid #9b59b6; 
+  border-radius: 8px;
+  padding: 4px;
+}
 
-    #petNome {
-      font-size: 18px;
-      color: #444;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
+#petNome {
+  font-size: 18px;
+  color: #444;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 
-    /* 🔹 BARRA DE XP */
-    .progress-container {
-      width: 100%;
-      height: 12px;
-      background: #e6e6e6;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-top: 10px;
-    }
+/* 🔹 BARRA DE XP */
+.progress-container {
+  width: 100%;
+  height: 12px;
+  background: #e6e6e6;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
 
-    .progress-bar {
-      height: 100%;
-      background: linear-gradient(90deg, #22b574, #1a945d);
-      width: 0%;
-      transition: width 0.4s ease;
-    }
+.progress-bar {
+  height: 100%;
+  /* Degradê da barra de progresso alterado para roxo e seu hover */
+  background: linear-gradient(90deg, #9b59b6, #7d3c98);
+  width: 0%;
+  transition: width 0.4s ease;
+}
 
-    #xpTexto {
-      font-size: 13px;
-      color: #333;
-      font-weight: 500;
-      margin-top: 8px;
-    }
+#xpTexto {
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+  margin-top: 8px;
+}
 
-    /* 🔹 SEÇÕES DE ATIVIDADES */
-    .section {
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      padding: 25px;
-      margin-bottom: 25px;
-    }
+/* 🔹 SEÇÕES DE ATIVIDADES */
+.section {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 25px;
+}
 
-    .section h2 {
-      text-align: center;
-      color: #22b574;
-      margin-bottom: 15px;
-    }
+.section h2 {
+  text-align: center;
+  /* Cor alterada para roxo */
+  color: #9b59b6; 
+  margin-bottom: 15px;
+}
 
-    .box-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-    }
+.box-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
 
-    .box {
-      background: #22b574;
-      color: #fff;
-      text-decoration: none;
-      padding: 15px;
-      border-radius: 15px;
-      text-align: center;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
+.box {
+  /* Cor de fundo alterada para roxo */
+  background: #9b59b6; 
+  color: #fff;
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 500;
+  transition: background 0.3s;
+}
 
-    .box:hover {
-      background: #1a945d;
-    }
+.box:hover {
+  /* Cor de hover alterada para o tom mais escuro de roxo */
+  background: #7d3c98; 
+}
